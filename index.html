@@ -1,19 +1,109 @@
-
-<script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
-<script>
-  new CozeWebSDK.WebChatClient({
-    config: {
-      bot_id: '7628534337236320261',
-    },
-    componentProps: {
-      title: 'Coze',
-    },
-    auth: {
-      type: 'token',
-      token: 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE',
-      onRefreshToken: function () {
-        return 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE'
-      }
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐ 西洋占星星盤解碼 - Star Decoding</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 50%, #2d1b69 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
-  });
-</script>
+    .logo { font-size: 4em; margin-bottom: 20px; }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { font-size: 1.1em; opacity: 0.8; margin-bottom: 15px; }
+    .description {
+      font-size: 0.95em;
+      opacity: 0.6;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .features {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .feature {
+      background: rgba(255,255,255,0.08);
+      padding: 15px 20px;
+      border-radius: 15px;
+      font-size: 0.9em;
+    }
+    .hint {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      background: rgba(255, 215, 0, 0.2);
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 0.95em;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <div class="logo">🌟</div>
+    <h1>西洋占星星盤解碼</h1>
+    <p class="subtitle">由專業占星師水星維護</p>
+    <div class="features">
+      <div class="feature">🪐 命盤解讀</div>
+      <div class="feature">⭐ 性格分析</div>
+      <div class="feature">🔮 運勢指引</div>
+    </div>
+    <p class="description">
+      提供精準命盤解讀，揭示性格天賦與人生方向<br>
+      點擊右下角開始你的星盤之旅
+    </p>
+  </div>
+
+  <div class="hint">👇 點擊右下角開始對話</div>
+
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: '7628534337236320261',
+          },
+          componentProps: {
+            title: '占星師水星 ⭐ 星盤解碼',
+          },
+          auth: {
+            type: 'token',
+            token: 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE',
+            onRefreshToken: function () {
+              return 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE'
+            }
+          }
+        });
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
