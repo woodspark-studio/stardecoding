@@ -1,0 +1,19 @@
+
+<script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+<script>
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7628534337236320261',
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE',
+      onRefreshToken: function () {
+        return 'pat_aRn7DWQIWa8drUz79DAHp7mSu1XCkSL11JwNXQ8EWGmgHPwwTvE8EJ6X30mZ5YiE'
+      }
+    }
+  });
+</script>
